@@ -14,3 +14,34 @@
 .footer-custom p h1 {
 	margin-bottom: 0;
 }
+
+.product-item {
+	margin: 25px 0;
+}
+
+.product-item h5 {
+	text-transform: uppercase;
+	font-size: 15px;
+	margin-bottom: 1px;
+	margin-top: 10px;
+}
+
+.product-item .product-subtitle {
+	font-size: 14px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.product-item .product-price {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.product-item a {
+	color: #000;
+	text-decoration: none;
+}
+
+.product-page-price {
+	font-size: 1.5em;
+}
