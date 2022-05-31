@@ -54,14 +54,14 @@
 
 				{% for product in cart %}
 					<tr>
-
-
-						<th><img height="75px" src="/uploads/{{product.product.illustration }}" alt="{{product.product.name }}">
-							{{ product.product.name }}
-						</th>
 						<th>
-							{{ product.product.subtitle }}
+							<img height="75px" src="/uploads/{{product.product.illustration }}" alt="{{product.product.name }}">
 						</th>
+
+						<td>{{ product.product.name }}
+							<br>
+							<small>{{ product.product.subtitle }}</small>
+						</td>
 
 						<td>
 							<a href="{{ path('decrease_to_cart', {'id': product.product.id}) }}">
