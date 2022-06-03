@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block javascript %}
+	<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
+
 {% block title %}Paiment de ma commande - MyStore
 {% endblock %}
 
@@ -89,7 +94,8 @@
 			€
 
 
-			<a href="" class="btn btn-success btn-block mt-3">Payer
+			<a href="" class="btn btn-success btn-block mt-3 checkout-button">Payer
+
 				{{(carrier.price + (total / 100))|number_format(2)}}
 				€</a>
 
