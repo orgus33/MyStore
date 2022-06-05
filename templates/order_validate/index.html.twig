@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Merci de votre commande ! - MyStore
+{% endblock %}
+
+{% block content %}
+	<h2>Confirmation de commande</h2>
+	<p>Bonjour
+		<strong>
+			{{ order.user.firstname }}
+			{{ order.user.lastname }}</strong>, merci de votre commande !<br>
+
+		Une confirmation de votre commande vient de vous être envoyé à l'adresse :
+		<strong>{{ order.user.email }}.</strong>
+
+
+		<br>
+
+	</p>
+
+	<h3>Voici votre récapitulatif :</h3>
+
+
+	<p>Commande n°
+		<strong>{{ order.reference }}</strong>
+
+
+	</p>
+
+	<p>Commande livré par
+		<strong>{{ order.carrierName }}</strong>
+		<br>
+		à l'adresse suivante :
+		<br>
+		{{ order.delivery|raw }}
+	</p>
+
+
+	<p>
+		<strong>Pour suivre votre commande, rendez vous sur votre
+			<a href=" {{ path('app_account') }} ">compte</a>.
+		</strong>
+	</p>
+
+
+</p>{% endblock %}

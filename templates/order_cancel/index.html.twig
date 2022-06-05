@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur de paiment - MyStore
+{% endblock %}
+
+{% block content %}
+	<h2>Erreur de paiment</h2>
+
+	<p>Bonjour
+		<strong>
+			{{ order.user.firstname }}
+			{{ order.user.lastname }}</strong>, il semblerait que votre paiement a échoué pour votre commande
+		<strong>n°{{ order.reference }}</strong>.
+
+
+		<br>
+
+		Une confirmation d'erreur de votre commande vient de vous être envoyé à l'adresse :
+		<strong>{{ order.user.email }}.</strong>
+		<br>
+
+	</p>
+
+	<p>
+		<strong>
+			<a class="btn btn-success" href=" {{ path('app_order') }} ">Réessayer le paiment</a>
+		</strong>
+	</p>
+
+
+	<p>
+		<strong>Retourner à votre
+			<a href=" {{ path('app_account') }} ">compte</a>.
+		</strong>
+	</p>
+
+
+</p>{% endblock %}
