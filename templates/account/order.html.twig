@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Mes commandes - MyStore
+{% endblock %}
+
+{% block content %}
+	<h1>Gérer mes commandes</h1>
+
+
+	{% if app.user.orders %}
+		<table class="table table-striped">
+
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+					<th scope="col">Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<pre>
+                {{ dump(user) }}
+            </pre>
+				{# {% for order in app.user.orders %}
+													<tr>
+								
+														<pre>
+								                        {{ dump(order) }}
+								                    </pre>
+								
+													</tr>
+												{% endfor %} #}
+
+			</tbody>
+
+
+		</table>
+
+
+	{% else %}
+		<p>Vous n'avez pas encore de commande sur la boutique francaise</p>
+	{% endif %}
+
+	<hr>
+
+	<ul>
+		<li>
+			<a href=" {{ path('app_account') }} ">Retouner à mon compte</a>
+		</li>
+	</ul>
+
+	<hr>
+
+
+{% endblock %}
