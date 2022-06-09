@@ -29,7 +29,7 @@ class OrderValidateController extends AbstractController
         }
 
 
-        if (!$order->getIsPaid() == 0) {
+        if ($order->getIsPaid() == 0) {
             $order->setIsPaid(1);
             $cart->Remove();
 
