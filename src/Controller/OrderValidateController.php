@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
+use App\Classe\Mail;
 use App\Entity\Order;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,7 +36,9 @@ class OrderValidateController extends AbstractController
 
             $this->entityManager->flush();
 
-            // TODO: Envoyer un mail à notre client pour lui confirmer sa commande
+            $mail = new Mail();
+            $content = "Bienvenue " . $order->getUser()->getFirstname() . " sur MyStore ! Merci de votre commande, elle est bien validé et elle vous sera livré dès que possible";
+            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), "Votre commande sur MyStore est bien validé !", $content);
         }
 
         // TODO: Afficher les quelques informations de la commande de l'utilisateur 
