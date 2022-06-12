@@ -30,8 +30,8 @@ class OrderValidateController extends AbstractController
         }
 
 
-        if ($order->getIsPaid() == 0) {
-            $order->setIsPaid(1);
+        if ($order->getState() == 0) {
+            $order->setState(1);
             $cart->Remove();
 
             $this->entityManager->flush();
